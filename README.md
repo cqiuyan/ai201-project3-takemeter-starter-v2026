@@ -100,7 +100,8 @@ Now I’m wondering: should I take this as a sign that I’m not ready for the m
 **Definition:** A post asking for broad running advice, recommendations, or tips without a clearly defined problem or decision.
 
 **Example 1:**
-> TODO: paste a real post
+> TODO: paste a real post 
+
 First Marathon tips
 
 Hi all just signed up for my first marathon (Salt Lake City Marathon) on April 26th. Since it being my first marathon I’m kinda just looking for any tips/info on how the whole process kind of works. One of my questions was about the bib bc some things I saw was that some races ship it to you and some you pick up when you check in but it didn’t say on their website. Other than that i appreciate any tips you all have leading up to the race, the day before, and during the race. Thank you in advance!
@@ -197,7 +198,7 @@ questions.
 ## The Dataset
 
 <!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+     cases. --> 
 
 **Where the posts came from:**
 

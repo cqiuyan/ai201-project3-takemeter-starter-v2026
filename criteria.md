@@ -51,62 +51,66 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+The classifier achieves **at least 65% accuracy** on the held-out test set on
+each of the three random seeds.
 
-
-
-**Why this target:**
-
-
-
----
-
-## 2.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
+**Why this target:** With only 200 Reddit posts, the training set is small, and
+`specific_question` and `general_question` can share a lot of wording. 65% is
+well above the ~33% a random guesser gets on three labels, so it still
+requires the classifier to actually separate the categories.
 
 ---
 
-## 3.
+## 2. Per-label performance
 
-<!-- Your criterion. -->
+On each of the three seeds, `specific_question` and `experience_sharing` each
+have an **F1 of at least 0.60**, and `general_question` has an **F1 of at least
+0.45**.
 
-
-
-**Why this target:**
-
-
-
----
-
-## 4.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
+**Why this target:** `general_question` is likely my smallest label, because
+most runners on r/Marathon_Training ask about a specific training problem.
+With few examples in the test split, its F1 will swing between seeds, so its
+target is looser than the other two.
 
 ---
 
-## 5.
+## 3. Label balance
 
-<!-- Your criterion. -->
+Each label has **at least 30 of the 200 collected posts** (15%).
 
+**Why this target:** The subreddit has both advice-seeking posts and personal
+race and training stories, but they don't show up equally often. At least 30
+examples per label keeps any one category from being too small to train on or
+evaluate.
 
+---
 
-**Why this target:**
+## 4. Labelling consistency
 
+My labels agree with the staff labels on **at least 70% of the 30 staff
+posts** (21 of 30), measured with `agreement.py`.
+
+**Why this target:** The line between `specific_question` and
+`general_question` depends on how carefully I apply my written decision rule.
+The staff set tests the same skill, applying a written rule exactly as written,
+on rules I didn't write myself, so it shows whether I label by the rule or by
+feel.
+
+---
+
+## 5. Prediction confidence
+
+On each of the three seeds, accuracy on the **most-confident third** of test
+predictions is **at least 15 percentage points higher** than accuracy on the
+least-confident third.
+
+**Why this target:** Posts with a detailed training problem or a clear race
+report should be easy to classify with confidence. Posts that mix background
+with a broad request for advice are harder. If the model's confident guesses
+aren't clearly more accurate than its unsure ones, its confidence means
+nothing for my data.
 
 
 ---
