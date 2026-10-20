@@ -39,10 +39,10 @@
 
 ## What This Does
 
+This classifier sorts posts from r/Marathon_Training into three categories: `specific_question`, `general_question`, and `experience_sharing`. Specific questions ask for help with a clearly defined running problem or decision, while general questions request broader tips, recommendations, or other runners’ experiences. Experience-sharing posts describe race results, training progress, or personal opinions without asking for advice or information.
+
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
-
 
 ---
 
@@ -271,16 +271,30 @@ don't count as questions.
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`, trained on my Mac's Apple Silicon
+GPU (MPS), torch 2.14.1.
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
+3 epochs · learning rate 2e-5 · batch size 16 · seed 42 
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Nothing. I ran the notebook's
+defaults.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
+train 139 · val 31 · test 31
+
+| Label | Train | Val | Test |
+|---|---|---|---|
+| `specific_question` | 74 | 16 | 16 |
+| `general_question` | 45 | 10 | 10 |
+| `experience_sharing` | 20 | 5 | 5 |
+
+`experience_sharing` has only 5 posts in the test split, so one mistake moves
+its recall by 20 points and its F1 will swing between seeds. It also turned out
+to be my smallest label, not `general_question` as I assumed in criterion #2.
 
 
 ---
