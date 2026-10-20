@@ -58,7 +58,7 @@ Community: [r/Marathon_Training](https://www.reddit.com/r/Marathon_Training/)
 
 ### `specific_question`
 
-**Definition:** A post asking for advice about a particular running problem or decision, with enough detail to identify what the author needs help with.
+**Definition:** A post asking for help with the author's own particular running problem, decision, or plan.
 
 **Example 1:**
 > TODO: paste a real post
@@ -97,7 +97,8 @@ Now I’m wondering: should I take this as a sign that I’m not ready for the m
 
 ### `general_question`
 
-**Definition:** A post asking for broad running advice, recommendations, or tips without a clearly defined problem or decision.
+**Definition:** A post asking for recommendations, general information, other
+runners' experiences, or opinions, not tied to a problem the author has.
 
 **Example 1:**
 > TODO: paste a real post 
@@ -184,12 +185,20 @@ Over and out
 **Which two labels:** `specific_question` vs. `general_question`
 
 **The decision rule I used every time:**
-If the post identifies a particular running problem or decision that the author wants help resolving, classify it as specific_question. Otherwise, if the author asks for broad advice or recommendations without focusing on one problem, classify it as general_question. If the post primarily shares an experience rather than requesting advice, classify it as experience_sharing. 
+If the author wants help with their own particular problem, decision, or plan,
+classify it as specific_question, even if they phrase it as "any tips?"
+("should I skip my long run?", "is 4:00 realistic for me?", "shin splints 2
+days out, would taping help?"). If the question isn't tied to a problem the
+author has, such as race or gear recommendations, general information, other
+runners' experiences, or opinions on a topic ("spring marathon recs?", "how
+does the bag drop work?", "should World Majors require a prior marathon?"),
+classify it as general_question. If the post asks readers nothing, classify it
+as experience_sharing.
 
-**Question or not:** If the post asks readers for advice or information
-anywhere, it gets a question label, even if most of it is a story. Rhetorical
-lines ("Who else is running Chicago?!", "Wish me luck!") don't count as
-questions.
+**Question or not:** If the post asks readers anything (advice, information,
+experiences or opinions), it gets a question label, even if most of it is a
+story. Rhetorical lines ("Who else is running Chicago?!", "Wish me luck!")
+don't count as questions.
 
 
 
@@ -200,19 +209,20 @@ questions.
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. --> 
 
-**Where the posts came from:**
+**Where the posts came from:** 201 public posts from
+[r/Marathon_Training](https://www.reddit.com/r/Marathon_Training/), copied by hand (title + full body)
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** I labelled the first 20 posts cold. The other 181 were pre-labelled by AI (Claude) using my written decision rule. I then read every one and changed 30 of them
+(`note` = `pre-labelled, checked`). Most of my changes (26) moved posts from `general_question` to `specific_question`: posts asking for "tips" about the author's own problem, which I count as specific.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `specific_question` | 106 | 53% |
+| `general_question` | 65 | 32% |
+| `experience_sharing` | 30 | 15% |
+| **Total** | 201 | 100% |
 
 **Three hard cases**
 
@@ -220,25 +230,40 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* "Hot take: I don't think a World Major should be your first
+> marathon." Mostly an argument, ending with "Should World Majors be open to
+> everyone, or should runners have to complete at least one marathon before
+> entering the lottery?"
 >
-> *Could have been:*
+> *Could have been:* `experience_sharing` or `general_question`
 >
-> *I chose, because:*
+> *I chose, because:* `general_question`. It reads like an opinion piece, but
+> the last line really asks readers for their opinion, and my rule counts
+> opinions as a question. It isn't about a problem the author has, so it isn't
+> specific.
 
 **2.**
-> *The post:*
+> *The post:* "Feeling burnt out from injuries." A long account of FHL
+> tendonitis and probably missing the race, ending with "Wondering if anyone
+> has any positive thoughts."
 >
-> *Could have been:*
+> *Could have been:* `experience_sharing` or `general_question`
 >
-> *I chose, because:*
+> *I chose, because:* `experience_sharing`. "Any positive thoughts" asks for
+> comfort, not advice, information, experiences or opinions, so I treated it
+> like the rhetorical lines in my rule. The post is about telling the story.
 
 **3.**
-> *The post:*
+> *The post:* "Thoughts on the MegaBlast?" The author gives height, weight,
+> past marathon time and goal pace, and wants a non-plated shoe for their next
+> race.
 >
-> *Could have been:*
+> *Could have been:* `specific_question` or `general_question`
 >
-> *I chose, because:*
+> *I chose, because:* `general_question`. It has a lot of personal detail and
+> a purchase decision behind it, but what it asks for is opinions on a shoe,
+> which is gear recommendations under my rule, not help with a problem the
+> author has.
 
 ---
 
@@ -271,17 +296,35 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I asked Claude to pre-label my posts using my original
+  rule: any question with a concrete detail (a distance, date, symptom or
+  pace) is `specific_question`.
+- *What came back:* Before labelling, it pointed out that almost every post
+  mentions a distance or a date, so that rule would put about 78% of posts in
+  `specific_question` and only about 8% in `general_question`. That would fail
+  my own balance criterion. It suggested splitting on what the post asks for
+  instead of how much detail it has.
+- *What I changed:* I switched to that kind of rule, then corrected the
+  pre-labels myself and rewrote the rule in my own terms: help with the
+  author's own problem is specific, even when phrased as "any tips?". My final
+  split is 53 / 32 / 15.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Feedback on my five draft criteria.
+- *What came back:* Two of them couldn't be measured as written. The notebook
+  doesn't report accuracy above a 0.80 confidence, and I had no second person
+  to label my posts. It also said my F1 target should be looser only for my
+  smallest label, not lowered for all three.
+- *What I changed:* I rewrote the confidence criterion as the
+  most-confident-third vs. least-confident-third gap the notebook reports,
+  measured consistency against the staff set with `agreement.py`, and split
+  the F1 target by label.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** Rows 21–201 of `labels.csv` were pre-labelled by
+Claude using my written decision rule. I read every one and changed 30 labels;
+those rows are marked `pre-labelled, checked`. Rows 1–20 were labelled by me
+alone, before seeing any AI labels, and are marked `cold`.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
