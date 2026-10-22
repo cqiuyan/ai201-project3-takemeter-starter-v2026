@@ -405,27 +405,38 @@ posts).
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 | 0.516 | 0.516 | 0.516 | MISSED |
+| 2. Per-label F1 | `specific` & `experience` ≥ 0.60, `general` ≥ 0.45 | 0.681 / 0.000 / 0.000 | 0.681 / 0.000 / 0.000 | 0.681 / 0.000 / 0.000 | MISSED |
+| 3. Label balance | ≥ 30 posts per label | 106 / 65 / 30 | same | same | MET |
+| 4. Staff agreement | ≥ 70% (21 of 30) | — | — | — | Not yet run (Milestone 3) |
+| 5. Confidence gap | most-confident third ≥ 15 pts above least | 0.90 vs 0.30 (+60) | 0.70 vs 0.30 (+40) | 0.70 vs 0.40 (+30) | MET |
+
+Per-label F1 is listed as `specific_question` / `experience_sharing` /
+`general_question`. Accuracy moved 0.000 across seeds, but not because the
+measure is stable: the model predicted `specific_question` for every test post
+on every seed, and each test split has 16 of 31 `specific_question` posts, so it
+scores 0.516 every time.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | specific_question | experience_sharing | general_question |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **specific_question** | 16 | 0 | 0 |
+| **experience_sharing** | 5 | 0 | 0 |
+| **general_question** | 10 | 0 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+All 10 real `general_question` posts were called `specific_question`, and 0
+went the other way. The model didn't learn the specific-vs-general boundary,
+or any boundary: all 5 `experience_sharing` posts, which ask readers nothing,
+were also called `specific_question`. It defaults to my majority label instead
+of reading the posts.
 
 
 
