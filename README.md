@@ -408,7 +408,7 @@ posts).
 | 1. Overall accuracy | ≥ 0.65 | 0.516 | 0.516 | 0.516 | MISSED |
 | 2. Per-label F1 | `specific` & `experience` ≥ 0.60, `general` ≥ 0.45 | 0.681 / 0.000 / 0.000 | 0.681 / 0.000 / 0.000 | 0.681 / 0.000 / 0.000 | MISSED |
 | 3. Label balance | ≥ 30 posts per label | 106 / 65 / 30 | same | same | MET |
-| 4. Staff agreement | ≥ 70% (21 of 30) | — | — | — | Not yet run (Milestone 3) |
+| 4. Staff agreement | ≥ 70% (21 of 30) | 97% (29 of 30) | same | same | MET |
 | 5. Confidence gap | most-confident third ≥ 15 pts above least | 0.90 vs 0.30 (+60) | 0.70 vs 0.30 (+40) | 0.70 vs 0.40 (+30) | MET |
 
 Per-label F1 is listed as `specific_question` / `experience_sharing` /
@@ -478,7 +478,7 @@ of reading the posts.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 29 / 30 = 97%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -500,25 +500,33 @@ of reading the posts.
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
+I matched staff on 29 of 30, including all 7 they marked as borderline
+(sp_005, sp_010, sp_014, sp_019, sp_020, sp_028, sp_029). One disagreement:
 
-**2.**
-> *The post:*
+**1.**
+> *The post:* sp_007: "Ran the same loop in 4C and in 24C within a fortnight,
+> same effort by heart rate. 90 seconds slower in the heat over six miles.
+> People keep saying heat costs you 'a bit' and it's more than that."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`
 >
-> *My call, and why:*
+> *My call, and why:* I think both labels are defensible, but I lean toward analysis. The writer provides a specific comparison between running at 4°C and 24°C, with a 90-second difference at the same heart rate. This supports the conclusion that heat affects running performance more than people might think. However, I initially considered it a hot_take because the writer uses one personal experience to make a broader claim. The staff definition does not specify how strong or generalizable the evidence must be.
 >
-> *Which pile:*
+> *Which pile:* (b), a gap in the definitions — the post contains a checkable fact that supports its argument, but there is some ambiguity about whether one personal comparison is sufficient evidence for the broader conclusion.
 
 **What the pattern in my disagreements tells me:**
+With one disagreement there's no real pattern, so the question is whether the
+set was easy or the staff rule is tight. I think it's mostly the rule. Each label has one test
+("is a checkable fact doing the work?", "is it the writer's own moment?"), and
+the hard cases were hard only until I applied it. For example, the 3% in
+sp_014 is decoration, so it's a `hot_take`. The set also helped: the 30 posts
+come in blocks of 10 per label, which made the pattern easier to see.
+
+This doesn't prove my own 201 labels are as consistent. My boundary between
+`specific_question` and `general_question` is looser than the staff rules: I
+revised the rule while labelling and changed 30 of the 181 AI pre-labels. So
+100% here shows I can apply a clear written rule, not that my own rule is that
+clear.
 
 
 
