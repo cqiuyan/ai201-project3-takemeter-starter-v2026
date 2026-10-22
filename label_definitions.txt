@@ -2,6 +2,9 @@
 #
 # Copied from the README so the baseline is judged on exactly the definitions
 # I wrote. baseline.py reads this file.
+#
+# Source of truth: README.md, "Label Taxonomy". If a definition changes there,
+# update it here too.
 
 specific_question: a post asking for help with the author's own particular running problem, decision, or plan
 general_question: a post asking for recommendations, general information, other runners' experiences, or opinions, not tied to a problem the author has

@@ -119,9 +119,8 @@ runners' experiences, or opinions, not tied to a problem the author has.
 
 ### `experience_sharing`
 
-**Definition:** A post sharing personal experiences, marathon results, training
-progress, reviews, or opinions without asking readers for advice or
-information.
+**Definition:** A post sharing personal experiences, race results, training
+progress, reviews, or opinions without asking readers anything.
 
 **Example 1:**
 
@@ -367,18 +366,33 @@ alone, before seeing any AI labels, and are marked `cold`.
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.645 | 0.516 | -0.129 |
+| Macro F1 | 0.502 | 0.227 | -0.275 |
+| F1 — `experience_sharing` | 0.333 | 0.000 | -0.333 |
+| F1 — `general_question` | 0.353 | 0.000 | -0.353 |
+| F1 — `specific_question` | 0.821 | 0.681 | -0.140 |
+
+
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+My trained model will beat the baseline on specific questions because it has a large sample data.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
+The untrained baseline beat my trained model on every measure (accuracy 0.645
+vs. 0.516, macro F1 0.502 vs. 0.227), so my fine-tuning added nothing. The
+trained model predicts `specific_question` for every post: its training loss
+barely moved in 27 steps, so it only learned that `specific_question` is my
+most common label. Even reading just my definitions, the baseline did better on
+all three labels.
+
+I also ran the baseline with bare label names. Accuracy was identical (0.645),
+so my definitions didn't improve the baseline overall: they helped
+`general_question` (+0.17 F1) but hurt `experience_sharing` (−0.33, on only 5
+posts).
 
 
 

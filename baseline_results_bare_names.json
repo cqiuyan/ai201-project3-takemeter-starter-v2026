@@ -1,0 +1,189 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 31,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": false,
+  "scores": {
+    "n": 31,
+    "accuracy": 0.6451612903225806,
+    "f1_macro": 0.5367965367965367,
+    "per_label": {
+      "experience_sharing": {
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665,
+        "support": 5
+      },
+      "general_question": {
+        "precision": 1.0,
+        "recall": 0.1,
+        "f1": 0.18181818181818182,
+        "support": 10
+      },
+      "specific_question": {
+        "precision": 0.6153846153846154,
+        "recall": 1.0,
+        "f1": 0.761904761904762,
+        "support": 16
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "HR for Z2 training\n\nHello,\nI had a Bruce stress test and my max HR came out to 205 (M/47). No issues were noted during the test\nMy question is this: I\u2019ve always ran my easy runs around 130 bpm. Have I been under training my aerobic base, and should I try to get it a little higher for my easy runs?",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Steamtown Marathon, 10/11/26, 10 min PR\n\nSigned up for Steamtown in Scranton, PA after hearing about the smaller size and net downhill. I faced a lot of adversity and pivoting in my training block including a low-grade Achilles strain. On the day of the race it rained the entire time.\nI have to say though, Scranton and its people did not disappoint. You start in a warm high school with access to tons of portajohns, aid stations were plenty and had plenty of water, Gatorade and Gu available, and a huge amount of food/drinks at the finish. From a staffing perspective they really have quite a showing. And while the race isn't easy to spectate I was really moved by the people who came out to cheer anyway.\nAs for me, I'm so pleased with my showing. I had put away hopes for 4:30, and didn't think I could PR with the injury, but held a confident and calm 10/min mile for the first 18 miles. I lost some pace because I hit a mile of mud at 19, then thought it best to protect my ankle which was starting to feel a little off around 23/24. Missed 4:30 but finished 10 minutes faster than my first marathon - I'll take it!",
+      "gold": "experience_sharing",
+      "predicted": "experience_sharing"
+    },
+    {
+      "text": "Post mortem on marathon falling apart at mile 23: gels and hydration\n\nHi folks. I did my second marathon this past weekend and it didn\u2019t go as well as I hoped. I started to deteriorate at mile 20 and completely fell apart at 23, though was able to finish. I think I got dehydrated and things started tightening up and prior muscle injuries flared up. It was warmer than expected and I overdressed a bit with \u00be running tights as opposed to my usual compression shorts. So, temperature comfort was a factor too.\nMy biggest takeaway was this: even if it\u2019s the same exact course, no two marathons are the same. I can\u2019t believe how different this year was compared to last year.\nI think my issue was fueling and hydration, so I listed some questions below.\nI tend to overthink things. My guess is I overcomplicated my approach and need to dial it back.\nIf my long runs are 20 miles, how do I train my stomach and, mostly, my mind to tolerate energy gels and electrolyte hydration after mile 23? I feel like the gels and stuff are just sitting and sloshing around. I take a gel every 20-30 min. My marathon pace was 4:25.\nWhat is the advantage of isotonic gels (I use GU) if you need to be diligent about taking 4 oz of water with each one? Is it the smaller packaging?\n3.  Do isotonic gels NEED to be taken with water? I use a mixture of Gatorade and Tailwind. Is that solution too concentrated to help absorb the gel? Details on hydration: 64 oz Camelback filled with a mixture of 24 oz Gatorade, 16 oz Tailwind, and water to top off to 64 oz. This lasts 13-15 miles, so for longer runs I stash a Gatorade somewhere along my route\n4. I saw people doing the marathon around my pace without carrying extra fuel and hydration. The aid stations were every couple miles, sometimes 3 miles. And, at my pace (10 min miles) some stations ran out. Also, only 3 or 4 aid stations had UCAN gels. How do people go the distance with such little hydration and fueling? (Or, maybe they're the 75 who DNF).\nLast year I took a gel every 30 min and had a much smoother marathon. I switched to more often after reading that we need 60-90 g carbs an hour.\nI know they're convenient, but gels get expensive after a while. I've seen recipes for DIY, I think I need to explore some options to make gels for calories and use hydration for electrolytes",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Mileage / long run before starting first marathon training block?\n\nI\u2019m doing my first marathon next year and I know it\u2019s still quite a while away and a few months before I start my 18 week training block. I\u2019m currently comfortable running 3x a week and long run up to a half-marathon fairly regularly. I\u2019m just wonder what my weekly mileage should be and length of my long runs before I start that training block? I want to build a really solid foundation so that I\u2019m strong and hopefully avoid injury when the main block comes along :)",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Last long run\n\nOn the 25.10.2026 I run my first marathon and Im seeking some advice for my potential last long run.\nFor a bit of training background: In the beginning of march 2026 I did a half marathon in around 1h55 min. My original plan was to run a sub 4hour marathon in autumn. The \"problem\" is that I had to study a great amount and the load was bigger than orgininally expected due to an additional large exam that I did. I couldnt train as much as I wanted to. I started training again in the beginning of september, in the studying phase from around may to the ending of august I only did around 5 - 7 km runs to get my head free.\nOnce I started training I had the following trainingssplit ( I switched the monday and tuesday training throughout the training):\nMonday: Long run\nTuesday: Back and Bizep\nWednesday: Swimming\nThursday: Legday\nFriday 90min Zone 2 training on the bike\nSaturday: Chestday\nSunday: full restday\nI did the following runs since september:\n01.09.2026 5.5 km easy run 09:03 min pace\n09.09.2026 5hour hike with a friend in the mountains (I deemed this acceptable because I saw it as a long zone 2 training)\n15.09.2026 15km run in zone 2 with a 08:57 pace\n22.09.2026 23 km run (this was to get my body accustomed to the distance) I did this run with a 07:28 min pace\n29.09.2026 25.6km Run (distance run aswell) with a 07:37 pace this run also had 140m uphill and 140m downhill since the marathon that Im doing has 190m uphill and 190m downhill\n05.10.2026 on this monday I was in a special educational programm where I wasnt home and I didnt know the environment I did a easy zone 1 zone 2 9km run with a 08:06 min pace.\nMy other stats im 173cm talls and around 82kg (with a rather muscular build)\nMy question for you is how should I use the remaining two weeks for training. My original Idea was to run a 32km run on monday evening with a 0745 pace...but Im not sure if that is a good idea. My father is a doctor and has experience in running half marathons and he strongly advised against running this long run. I know that this long run would not give me any training benefit, it would only be for the mental game because my last 25.6km run got quite hard. I do have a certain mental advantage because I did a 101km march in the army but that is now over 2 years ago...my question for you all would be how would you structure those last two weeks before the run and what advice would you give me in regards to the 32km run.\n(English is not my first language so I hope everything is clear and understandable)",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "How do you manage counting distance when running with only phone?\n\nFirst off, I might sound too perfectionist but hear me out \ud83d\ude05 My problem is that when running, I run with only my phone and recently (on the marathon) I learned that my phone counts more distance than actual kms. It ended up 43.16 (my friends wearing watches got 42.7).\nThe thing is I was training counting on my phone results and when running marathon I was barely checking my phone, my legs sorta of knew the pace. The result was good for me (4h 4m official time) but it got me thinking: to which metric I need to stick so I run official distances under the goal?\nHow do you manage this?\nThe first idea to fix it prob is to buy watches but I don't want now, got used to run with my phone.",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "5k improvement plan before marathon training block?\n\nHi all!\nI just finished my first half this past weekend and am now hoping to do my first marathon the first weekend of May! I have a 4wk recovery plan then an awkward gap of time (about 9wks I think) before I\u2019ll be staring my 18wk marathon training block.\nConsidering this gap, I\u2019m thinking of doing a 5k improvement plan. Is this a good idea? Is there something better I should be doing? I\u2019m a bit lost with all these new steps so not sure what my best option is here.\nThank you all so much in advance for your advice!",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Marathon blowup\n\nJust finished my second marathon in 3:28:54 (30min PB). However went in with what I realistically thought was an achievable goal of 3:20. Started out around 4:55/km pace and planned to be able to ease into 4:40s. Problem was around 18kms I could feel early that cramps were going to come if I picked up the pace. This was odd because in my training sessions I was able to maintain below 4:40s for 25kms in my key 36km training run and was not even close to cramping in those sessions.\nMy fueling and hydration were fine I had electrolyte tablets and a gel every 25mins and carb loaded sufficiently two days prior.\nGot me wondering if it was the use of carbon plate alpha flys in the marathon that caused this. I had ran about 35kms in them prior to the race and didn\u2019t have any issues (the 36km run and all my other MP long runs were using Saucony endorphins).\nI have since read that alpha flys can torch your calves if not fully used to them.\nKeen to hear if anyone else has experienced this? Or what else I am not thinking of what could be the reason.",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Amsterdam Marathon: how does the bag drop work?\n\nRunning tomorrow. There was no bag in the bib pickup. How does the clothing drop-off work, and is a small backpack OK? Thanks!",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Shin splints in last 2 weeks of training block\n\nHey guys!\nI need an advice. My training block was awesome , every run I felt like improving and that my goal (sub4) was doable.\nHowever in the last two weeks of my training block I started getting this sharp pain in my inner shin. I had to stop my taper long run due to the pain and during my race strides 2 days ago.\nI\u2019m running Melbourne marathon in 2 days and I am really nervous that the pain doesn\u2019t let me finish :(.\nAny advices at this point? Would getting my leg taped help?\nCheers everyone!",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Knee Pain at High Mileage\n\nHi everyone. I just wrapped up week 12 of a 16 week long training block for a my first marathon ever. The race is in little under a month. This training block has unfortunately not gone as planned, as I have been battling hip pain and, now, knee pain.\nAnytime I run a high number of mileage (>12 miles), my right knee begins to hurt badly. Today I did 15 and on the last half mile I was hobbling home. I\u2019ve been doing focused strength training for my hips, knees, glutes, and ankles, and am even doing physical therapy once a week. The knee pain is nearly nonexistent, and then I do a long run and it\u2019s back full swing for a couple days, so I take it easy and the process repeats.\nIt should be noted that last year I had to drop out of the marathon and defer my spot in the race to this year because of the same injury 2 weeks before that race. After that I took a long break with no running. Fast forward to this year, my training began fine and I was doing long runs with no problem and then about a month ago now, I ran the DC half and I guess tweaked it again during that race. Now anytime I long run, it comes back as I said.\nI\u2019m just worried for the marathon. If I get 15/16 miles in and my knee starts acting up, there\u2019s no way I can run another 10 miles on it. My goal is 3:30:00 and I believe I\u2019m more than capable of it if I can just solve this knee issue. Has anyone had this issue before ? If so, how did you cope with or resolve it? Does anyone have any tips? Thanks in advance.",
+      "gold": "general_question",
+      "predicted": "general_question"
+    },
+    {
+      "text": "Lisbon half marathon 2027\n\nHi everyone! I didn\u2019t get into the Lisbon half marathon 2027. I\u2019ve heard that in previous years they open up some spots a couple months into the race, can anyone verify?? Thanks in advance!",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "First marathon. 445 finish\n\nAs a 207 halfer boy did I think I had a 430, but mile 21+ was BRUTAL, was able to pick my pace up back at 23 and last mile was the fastest but yes 21+ was BRUTALL. Glad I finished but definitely incredibly hard",
+      "gold": "experience_sharing",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Bib belt positioning\n\nI bought a bib belt for my marathon tomorrow. I tried it on and not so sure I want to wear it.\nIf the band is at a comfortable place, even with my shorts waist, it\u2019s so low the bib annoyingly flops around with each step and reminds me of a loin cloth.\nIf it\u2019s higher, so the bib is over my lower abdomen, the band feels restrictive around my lower chest/upper abdomen. Plus, my arms brush against the gel fuel in the loops.\nI learned of a bib belt on this sub, so hoping someone sees this and lets me know how they wear it.\nThanks.",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Qualifying for Boston 2028\n\nI\u2019m looking for some advice on training block periods. I just raced my first official half marathon and got 1:36:46. My goal is to get a 2:50 marathon by September 2027. I went to make a plan with Garmin Coach but a 48 week training block doesn\u2019t sound right. A 5-6 month build phase is crazy\u2026 should I do 4 separate 12 week training blocks? I\u2019m new to running (at least running while training with intention) only been training for 4 months. So I\u2019m not sure how to approach this.\nAny and all advice is welcome! Thanks!",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Easy long run purpose and advice?\n\nSo I\u2019m signed up for the Houston half marathon in January and have only recently reintroduced running in August. I ran a 1:50 half marathon in January but took a break from January to July to regulate my cycle. In August I just started running 2-3x a week 2-4 miles easy but was starting to see my paces and hr improve (still much slower than what I used to run but was seeing improvement none the less). I\u2019ve also strength training 3-4x a week since January.\nNow I\u2019ve been working with a coach/nutritionist to help me prepare for this half marathon while also maintaining a regular cycle. So right now I\u2019m doing 3 strength sessions, 2 20min z2 stair sessions, one interval session (400m and 800m repeats), and one easy 60-70min long run. The thing is if I truly run my long runs easy I\u2019m at like an 11:30 pace rn which is really discouraging. Like today I ran 6 miles at an 11:30 pace with avg hr 155 but I really just tried to not look at my watch and make sure I was keeping the effort easy. This is like 60+ secs slower than what I was doing previously - for example 2 weeks ago I did 6 miles at a 10:30 pace but my avg hr was like 165 but that effort also felt much more challenging than my run did today which was like boring.\nI\u2019m just struggling rn like do I just run at a 10-10:30 pace and let my hr be high or should I really just swallow my pride and let my easy run be truly easy and let my pace be whatever it is? It\u2019s also hard because like last year my long runs I never kept truly easy I was running anywhere from 9:10-9:40 and my avg hr was around 162 and I ended up running my half at an 8:27 pace. So like I obviously was used to running longer distances at a faster pace because that\u2019s how I trained my long runs to prepare for that race.\nI\u2019m sure I won\u2019t be able to beat my 1:50 in January considering but I would at least like to get closer to a 1:55. It just feels like rn that goal is almost like un achievable since my easy pace is so slow right now. But I also know that we will add in another run in a couple of weeks (waiting for me to get another period) and change my interval runs to more tempo style workouts. I\u2019m just really hoping that everything comes together and I\u2019ll be able to run at a stronger pace by January.",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Full time powerchair user to first marathon.\n\nI had Facebook remind me that 3 years ago I required the use of a powerchair full time, a day of uni could wipe me out for weeks.\nAnd yesterday I completed my first marathon, as the only wheelchair user the race has had.\nAnd now I\u2019m about to go to uni for another 5 days of 9to5 immediately after",
+      "gold": "experience_sharing",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Cramping experiences?\n\nTL;DR: I\u2019m scared of cramping in marathons. Is it just part of the deal, or are there strategies beyond salt?\nHi all! I\u2019ve developed a pretty irrational fear of cramping and would love some advice.\nMy marathon history so far:\nNYC (first marathon): 3:59. Honestly couldn\u2019t have gone better. The last 6 miles were tough and the last 2 were really tough, but I squeaked in under 4 hours with no issues.\nMarathon #2: 4:00:03 (painful in more ways than one). I got a major calf cramp out of nowhere. I\u2019d never had one before, and it literally dropped me to the ground.\nMarathon #3: 3:58. No full cramp, but I could feel one coming on, even though I took in a huge amount of sodium.\nSo, two questions:\nBesides salt, what do you do to prevent cramps? (Training, pacing, fueling, strength work, anything.)\nIs this a fear I just need to get over, or are there strategies that reliably help?\nThx, and happy running!",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "How to stop over striding? I feel like I have tried everything at this point!\n\nI used to be plagued by reoccurring shin splints, after working on my strength with my physio which is currently on a very decent level I have been trying to tackle my form. I had a very aggressive heel strike and over striding massively, my cadence was also very low. I have managed to up my cadence a little (about 4-5 steps at easy pace) and moved to a forefoot strike but I am still over striding. Now starting to get post tib tendon issues, instead of shin splints so I need to fix this asap as I have started to train for my first half (currently paused due to pain :( )\nI know as I can tell my foot lands too far, I also make quite a lot of noise when I run plus of course the pain I am having during running/after and generally feeling heavy and dragging myself none of this nice, bouncy feeling. So I have swapped heel over stride to forefoot over stride and basically back in square one.\nI have watched so many videos on YT/ reels/ read posts/ cues/ tried drills (maybe not enough?) And I still just cannot stop over striding :( I know what my form should be like, I understand how my legs should be moving but I absolutely can't achieve it.\nHas anybody else struggled with this so much?? Is there anything else I can try? I'm starting to really get into my own head about this when running.",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Illness week before marathon\n\nHey guys, got the Melbourne marathon this Sunday which I\u2019m super excited to (hopefully) run in.\nLast Tuesday, (12 days pre marathon) I came down with a very mild illness. Nothing terrible, was getting thru work days completely fine, not bed ridden, just had some congestion, occasional headache, higher HR at rest, that was about it, in which I stopped feeling those symptoms on Saturday (8 days pre marathon)\nI\u2019ve done 2 7k runs each, with my HR being a good 5-10bpm higher than usual (it\u2019s also been a lot sunnier than most of my training was in too so not sure), finished both the runs completely fine but they just were harder than usual to complete during them.\nNow I made the mistake on probably not checking what sort of sickness I had, but I was around ppl who came down with influenza A. They were proper sick for over a week, but as I said what I had was mild, could\u2019ve been a cold for all I know. But in case it wasn\u2019t, maybe it was a mild flu, just seeing what other people out there have done in the situation, ultimately it\u2019s up to me if I wanna take the risk to race or not but would be good to hear other people\u2019s stories. Thanks",
+      "gold": "general_question",
+      "predicted": "experience_sharing"
+    },
+    {
+      "text": "Can I do it?\n\nI\u2019m training for my first marathon\u2014Dallas, in 8 weeks. I worked up to an 11-mile long run last month, but foolishly decided to do a 5K race the next day, and my posterior tibial tendon flared up. I\u2019m only just now feeling close to normal and ran 5 miles yesterday with only slight irritation towards the end.\nI plan to work up to my long run two weeks before the marathon, which would be about 16 miles.\nAm I cutting this too close? Or should I just go for it and be careful?",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Half Marathon tune up race and time prediction\n\nI\u2019m running a half marathon on November 1st. I have not done a complete half marathon block. I know that I can easily run it, but I\u2019m wondering if I should race it due to limited amount of LT Training. There\u2019s a different Half Marathon and 5k this Sunday, and I\u2019m also wondering if I should use either as a tune up race to help predict time. I could also use the half as a fun way to get 13.1 in a last time, and I could run it at easy pace. Here\u2019s some data about my recent training.\nBackground**\n- Started running outdoors ~spring 2026; previous aerobic base from indoor cycling and jump rope\n- PRs: 5K 21:44 (Sept, rolling course), 8 mi 1:08:12 (Aug, San Diego), 8K 41:25 (May)\n- Never raced past 8 miles. Longest run ever 15.7 (June). 5k is the only race that I\u2019ve raced hard.\n- 6 days/week, jumped very late into Pfitzinger Faster Road Racing Half Schedule 2. Followed his 5k plan before that.\n- Easy pace ~9:50\u201310:30. Most of this block was in US South summer heat/humidity\n- Most recent LT: 4 mi continuous @ 7:44/7:37/7:37/7:44 (Oct 7)\n- Workouts column excludes strides (done ~1-2x/week)",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "COVID 1 week out from marathon\n\nWas due to do my 2nd marathon this year this week in Dublin.\nStarted feeling meh on Friday, and awful on Sunday/Monday when I did a positive COVID test. Feeling a lot better today, but still guessing id be less than 50/50 for Sunday's race. I have 5 sleeps to go though!\nAt this point, Id be delighted to run at all, even just at easy pace and enjoy the atmosphere etc. I had been planning to have a crack at my 2.56 PB.\nAnybody have any experiences positive or negative with COvId during taper?",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "How big of a difference is there between the first and subsequent marathons?\n\nI'm training to run my first marathon in about two weeks, and while I'm excited to run it, this training block has definitely been brutal. I knew it was to be expected since this is the most running I've ever done in my life, and I keep telling myself that training for the next marathon (whenever that is) will be easier because my body will be more used to it. I was curious to see what training for a first marathon vs training for second and onward marathons has been like for people. Have you found the training blocks easier? Are you less prone to injury? (I unfortunately ended up with shin splints despite strength training and stretching). Is it easier to go for faster paces and PRs? I'd love to run marathons for the rest of my life, but I don't really want all the training blocks to be like this one",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "I finished\n\nRan the Atlantic City marathon this past weekend. \u2018Twas my fourth marathon. I definitely skimped on some training: skipped some long runs because of life or illness but ALSO (fatally) skipped a lot of strength training days at the gym. This cycle of training was extremely begrudging for me, to say the least.\nDidn\u2019t have any specific time goals, just wanted to finish, but boy was it rough. Weather was cold and windy, which is a fatal weakness of mine. I started having GI issues and literally thought I was finally going shit my pants at one point. But then it went away, and I was able to keep going. Finished at an extremely HUMBLE and DEMURE 5:40, but finished.",
+      "gold": "experience_sharing",
+      "predicted": "experience_sharing"
+    },
+    {
+      "text": "Is my taper too short?\n\nTraining for NYRR NYC 2026 (my 4th and final; I\u2019m injury prone, but doing well so far!). Did my 20 miler today; for my 2 week taper I was planning an 8 and a 4 miler. In the race\u2019s FB group, I\u2019m seeing things like 12 and 8 / 14 and 9. Should I plan for more miles in the next 2 weeks?",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Next marathon is in April. Hansons?!?\n\nThis will be my second time running the Jersey City Marathon. I trained with Runna last time and I found it\u2026 dumb. It feels like AI crap at this point.\nThis time around I\u2019m going to try Hansons. I am by no means a fast runner. I did over five hours my last and first marathon. But this time I\u2019m going for four hours. A big chunk of time off but I feel like I can do it. Maybe? Has anyone done that?! Over an hour less in a year?!\nAlso, I\u2019m under 5ft tall. I\u2019m wondering if any other short people feel my slow runner pain and have tried Hansons 18 week plan.",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "I just ran my first marathon after ten months of training\n\nI did it! After a lot of ups and downs, missed weeks thanks to knee pain, and so much self-doubt.\nLast December a significant change happened in my life, and suddenly I had a lot of free time. I decided to use it to train for a marathon, which had been a long-awaited dream of mine.\nWhen I started in January, the first milestone I set for myself was a half marathon at the end of March. I finished the half just a few minutes within the cutoff time, and I was thrilled. After that, I knew the next step was the marathon. I had almost 7 months to prepare, and I was dedicated.\nI trained and trained: running 4 times a week, lifting 3 times, and cycling 1\u20133 times. I imagined my finish at least a hundred times.\nThen came the long-awaited day, full of nerves and adrenaline, not knowing if I could even finish. Funny thing: the sweeper bus scared me in March, and last week too, even though my only goal was to finish within the cutoff time. I had a pace plan that I followed strictly., which worked out quite well, and so did my fueling.\nAfter hours of running almost without stopping, I reached the last stretch, where my friends and family were waiting for me by the roadside. All the training, the missed parties, and the 4 am alarms in summer to avoid the heat flashed before my eyes, when I was crossing the finish line. It\u2019s an incredible feeling to know you\u2019re capable of something like that. I\u2019ve been so happy ever since.\nHonestly, looking back, I don\u2019t even know how I did it. My longest run was 35k, and I planned my pacing and fueling based on that run.\nedit: Some of you think I should not give advice to fellow beginners like me with my finish time so I deleted the recommendations",
+      "gold": "experience_sharing",
+      "predicted": "experience_sharing"
+    },
+    {
+      "text": "What marathon pace should I train for?\n\nHey folks, I\u2019m about to start a training block for the Manchester Marathon in April next year. I\u2019m 36M, 70kg and have done a marathon before at 3.29. I\u2019d like peoples advice on what to realistically set as a goal.\nMy 5k PB is 18.55 and yesterday I ran a 1.29 HM, so I think I\u2019ve got *some* speed. The target is to get more running into me, as up until recently I have been running no more than 20-25 k a week; I\u2019d like to build up to 60-70km a week. If I can get this kind of mileage in my legs, and with my speed, is sub 3 hrs a realistic goal with dedicated training? Or am I better aiming more for a sub 3.15 or 3.10 first?\nOn a separate note, has anyone here used the Runna training app? Would you recommend it?\nThanks for your time and advice!",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "Sugar Addiction Post-Marathon\n\nHi all! Curious if anyone else experiences this. I ran Chicago on Sunday, and my sweet tooth has been UNCONTROLLABLE. Usually I can rein in my sugar intake and really don't consume tooooo much added sugar, but this week I am a glutton for candy and chocoalte. I feel like I'm gaining a shit ton of weight - just want to know I'm not being crazy and am not alone. I know I cannot fuel myself on this TRUST haha.",
+      "gold": "general_question",
+      "predicted": "specific_question"
+    },
+    {
+      "text": "MCM Next Week\n\nHey all, I\u2019m going to be running MCM marathon next week as my first marathon. Originally when I signed up I didn\u2019t know what my finishing time would be so I set it to 4:45-5 I believe. After going through training I think now my target finish time is closer to 3:45-4. Issue is I never changed it and got assigned to the 4:45-5 corral(11 of 14 I believe). Not sure how big a deal it is but this year they said corrals will be enforced and we won\u2019t be able to move up. What I\u2019m worried about is the amount of runners and having to weave through people earlier on. Will try to move up but if not allowed just wanted to hear any tips/strategies!\nAlso forecast is showing rain next week atm which would suck. Any tips to deal with that too would be helpful.\nthanks all in advance!",
+      "gold": "specific_question",
+      "predicted": "specific_question"
+    }
+  ]
+}
