@@ -449,11 +449,11 @@ of reading the posts.
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.65 on every seed | MISSED | 0.516 on all three seeds |
+| 2 | Per-label F1 | `specific` & `experience` ≥ 0.60, `general` ≥ 0.45, every seed | MISSED | `specific_question` 0.681 passes, but `experience_sharing` and `general_question` are 0.000 on all three seeds |
+| 3 | Label balance | ≥ 30 posts per label | MET | 106 / 65 / 30 in `labels.csv` (the smallest label is exactly at the target) |
+| 4 | Staff agreement | ≥ 70% (21 of 30) | MET | 29 of 30 (97%) from `agreement.py` |
+| 5 | Confidence gap | most-confident third ≥ 15 pts above least-confident, every seed | MET | +60, +40, +30 points. Met on the numbers, but see the diagnosis below |
 
 **Diagnoses**
 
@@ -465,6 +465,42 @@ of reading the posts.
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+**#1 and #2 (accuracy and per-label F1) have the same cause: the model never
+trained enough to learn the text, so it predicts my majority label for every
+post.** This is a model and training problem, not a labelling one. How I know:
+
+- *The predictions:* the confusion matrix has all 31 test posts in the
+  `specific_question` column on every seed, including all 5
+  `experience_sharing` posts, which ask readers nothing. If the model had
+  learned the texts but my specific-vs-general boundary were inconsistent, I'd
+  expect mistakes between those two labels, not `experience_sharing` posts
+  going there too. Accuracy is 0.516 on every seed because each test split has
+  16 of 31 `specific_question` posts.
+- *The training loss:* it went from 1.016 to 0.956 in 27 steps (3 epochs × 139
+  posts ÷ batch 16). Predicting just my label proportions gives a loss of about
+  0.98, so the model learned how common each label is and nothing else.
+- *The agreement report:* I matched staff on 29 of 30, and my one disagreement
+  (sp_007) was a gap in their rule, not me applying it loosely. That's evidence
+  I apply a written rule consistently, so inconsistent labels aren't the likely
+  cause. The caveat is that my own specific-vs-general rule is looser than the
+  staff's, so this evidence is indirect.
+- *The baseline:* a zero-shot model reading only my definitions got 0.645 on
+  the same 31 posts. My labels can be learned from the text, but my fine-tuned
+  model didn't learn them.
+
+Too few examples plays a smaller part. `experience_sharing` has only 20
+training and 5 test posts, so its F1 will be jumpy even after the model learns.
+But `general_question` has 45 training posts and also scored 0.000, so label
+size isn't the main cause. My criterion #2 also assumed `general_question`
+would be the smallest label; it turned out to be `experience_sharing`. I'm not
+revising the target, because the criterion is measurable and I simply missed
+it.
+
+**A note on #5:** it's met on the numbers, but it says less than it seems to.
+The model always picks `specific_question`. Its confidence is just higher on
+posts that really are `specific_question`, so it picked up a weak signal from
+the text that was never strong enough to change a prediction.
 
 
 
