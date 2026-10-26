@@ -453,7 +453,7 @@ of reading the posts.
 | 2 | Per-label F1 | `specific` & `experience` ≥ 0.60, `general` ≥ 0.45, every seed | MISSED | `specific_question` 0.681 passes, but `experience_sharing` and `general_question` are 0.000 on all three seeds |
 | 3 | Label balance | ≥ 30 posts per label | MET | 106 / 65 / 30 in `labels.csv` (the smallest label is exactly at the target) |
 | 4 | Staff agreement | ≥ 70% (21 of 30) | MET | 29 of 30 (97%) from `agreement.py` |
-| 5 | Confidence gap | most-confident third ≥ 15 pts above least-confident, every seed | MET | +60, +40, +30 points. Met on the numbers, but see the diagnosis below |
+| 5 | Confidence gap | most-confident third ≥ 15 pts above least-confident, every seed | MET | +60, +40, +30 points. Met on the numbers|
 
 **Diagnoses**
 
@@ -570,24 +570,61 @@ clear.
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** One training setting: `EPOCHS` from 3 to 10. Nothing
+else changed: same labels, same learning rate (2e-5), batch size (16), seeds
+(42, 7, 2024) and splits.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** The diagnosis of #1 and #2. The model
+predicted `specific_question` for every post on every seed, and its loss
+stalled at about the level of knowing only the label proportions after 27
+update steps. The agreement report (29/30) and the baseline (0.645) pointed
+away from my labels and toward too little training, so I gave the model more
+than three times as many update steps (about 90).
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 | 0.677 | 0.548 | 0.581 | MISSED |
+| 2. Per-label F1 | `specific` & `experience` ≥ 0.60, `general` ≥ 0.45 | 0.750 / 0.000 / 0.706 | 0.667 / 0.000 / 0.400 | 0.684 / 0.000 / 0.526 | MISSED |
+| 3. Label balance | ≥ 30 posts per label | 106 / 65 / 30 | same | same | MET |
+| 4. Staff agreement | ≥ 70% (21 of 30) | 97% (29 of 30) | same | same | MET |
+| 5. Confidence gap | most-confident third ≥ 15 pts above least | 0.90 vs 0.60 (+30) | 0.70 vs 0.40 (+30) | 0.70 vs 0.50 (+20) | MET |
+
+Per-label F1 is listed as `specific_question` / `experience_sharing` /
+`general_question`.
+
+Confusion matrix after the change (seed 42, as section 7 prints it):
+
+| true \ predicted | specific_question | experience_sharing | general_question |
+|---|---|---|---|
+| **specific_question** | 15 | 0 | 1 |
+| **experience_sharing** | 5 | 0 | 0 |
+| **general_question** | 4 | 0 | 6 |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
+Yes, partly. The model now reads the text instead of always guessing my
+majority label, but it still misses both criteria it missed before.
+
+- *What improved:* `general_question` went from F1 0.000 on every seed to
+  0.706 / 0.400 / 0.526. Across the three seeds it got 14 of 30 real
+  `general_question` posts right, compared with 0 before. Macro F1 rose from
+  0.227 to 0.485 / 0.356 / 0.404, and accuracy rose on every seed.
+- *What didn't:* `experience_sharing` is still 0.000 on all three seeds. The
+  model never predicted it once, and all 15 of those test posts across the
+  seeds went to a question label (14 to `specific_question`). With only 20
+  training examples, it hasn't learned this label even with more training.
+  That's the "too few examples" cause, which the first run hid because nothing
+  was learned at all.
+- *The numbers are now unstable:* accuracy ranges from 0.548 to 0.677, a
+  13-point spread across seeds, which is more than the ~10 points the course
+  treats as stable. Seed 42 cleared the 0.65 target and beat the baseline
+  (0.645); seeds 7 and 2024 didn't. Since the target has to hold on every
+  seed, #1 is still MISSED. A 31-post test set with only 5 `experience_sharing`
+  posts is too small to give a steady number.
 
 
 
@@ -597,12 +634,38 @@ clear.
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+**#2, per-label F1 (`experience_sharing` still 0.000 on every seed).** What
+I'd do: add about 30 more `experience_sharing` posts (race reports, "I
+finished!" posts, rants that ask readers nothing), labelled with the same rule
+and care, so the label has about 50 training examples instead of 20. It's the
+label with the worst F1, and 10 epochs didn't move it at all, which points at
+too few examples rather than too little training. I'd also try a longer
+`MAX_LENGTH`. Race reports are long, and at 128 tokens the model sees only the
+opening background, which reads a lot like the background in question posts.
+Why I stopped: the assignment asks for one change measured properly, and I
+used mine on training length because my diagnosis pointed there first. Adding
+data would have been a second change mixed into the same before/after
+comparison.
 
+**#1, overall accuracy (0.677 / 0.548 / 0.581).** What I'd do: the same
+fix. Every `experience_sharing` test post is currently a guaranteed miss, so
+making that label learnable is the most direct way to raise accuracy on every
+seed. More data overall would also shrink the 13-point spread between seeds,
+which comes from a 31-post test set with only 5 `experience_sharing` posts.
+Why I stopped: the same one-change rule. Each three-seed run also takes about
+25 minutes at 10 epochs on my 8 GB laptop (the first run took almost an hour
+because memory was full), so a careful second experiment was more than this
+unit had room for.
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
+I meant the labels to capture what a post asks of its readers, so
+`experience_sharing` posts should be the easiest: they ask nothing. The
+confusion matrix shows the model learned part of my specific-vs-general line
+(6 of 10 `general_question` posts right on seed 42) but sent all 5
+`experience_sharing` posts to `specific_question`, so it never learned to
+notice that a post asks no question.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════
